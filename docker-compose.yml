@@ -1,0 +1,20 @@
+services:
+  web:
+    build: .
+    env_file: .env.local
+    environment:
+      ML_SERVICE_URL: http://ml:8000
+    ports: ["3000:3000"]
+    depends_on:
+      ml:
+        condition: service_healthy
+    restart: unless-stopped
+  ml:
+    build:
+      context: .
+      dockerfile: ml/Dockerfile
+    env_file: .env.local
+    volumes:
+      - ./artifacts:/app/artifacts:ro
+    expose: ["8000"]
+    restart: unless-stopped

@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: loanpulse-ml
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./ml/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    envVars:
+      - key: MODEL_ARTIFACT_PATH
+        value: /app/artifacts/production
+      - key: ML_SERVICE_API_KEY
+        generateValue: true

@@ -1,0 +1,13 @@
+.git
+.github
+.next
+.venv
+node_modules
+data
+coverage
+*.log
+*.tsbuildinfo
+.env*
+__pycache__
+*.py[cod]
+artifacts/run-*

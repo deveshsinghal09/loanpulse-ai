@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "app/api/copilot/route.ts": { "maxDuration": 30 },
+    "app/api/loans/[id]/risk-time-machine/scenario/route.ts": { "maxDuration": 15 }
+  }
+}
