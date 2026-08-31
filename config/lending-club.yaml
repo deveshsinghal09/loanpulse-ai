@@ -1,0 +1,61 @@
+target_column: defaulted
+positive_label: 1
+time_column: issue_date
+prediction_time_column: issue_date
+id_columns:
+  - loan_id
+
+include_columns:
+  - loan_amount
+  - term_months
+  - interest_rate
+  - installment
+  - grade
+  - sub_grade
+  - employment_length
+  - home_ownership
+  - annual_income
+  - verification_status
+  - purpose
+  - state
+  - dti
+  - delinquencies_2y
+  - credit_history_years
+  - fico_score
+  - inquiries_6m
+  - months_since_last_delinquency
+  - open_accounts
+  - public_records
+  - revolving_balance
+  - revolving_utilization
+  - total_accounts
+  - months_since_major_derogatory
+  - application_type
+  - joint_annual_income
+  - joint_dti
+  - currently_delinquent_accounts
+  - total_current_balance
+  - mortgage_accounts
+  - public_record_bankruptcies
+  - tax_liens
+  - bankcard_limit
+  - installment_credit_limit
+  - payment_burden
+
+drop_columns: []
+suspicious_column_policy: error
+train_fraction: 0.60
+validation_fraction: 0.20
+test_fraction: 0.20
+random_seed: 42
+decision_threshold: 0.50
+disagreement_threshold: 0.15
+isotonic_min_samples: 1000
+isotonic_min_improvement: 0.002
+enable_challenger: false
+compute_shap: true
+shap_sample_size: 300
+primary_n_estimators: 180
+challenger_n_estimators: 160
+ratio_features: []
+temporal_features: []
