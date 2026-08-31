@@ -35,7 +35,7 @@ export function RiskMovementPanel({ distribution }: { distribution: Distribution
           <span
             key={item.band}
             style={{ background: item.color, width: `${(item.loans / total) * 100}%` }}
-            title={`${item.band}: ${item.loans.toLocaleString()} loans`}
+            title={`${item.band}: ${item.loans.toLocaleString("en-IN")} loans`}
           />
         ))}
       </div>
@@ -43,7 +43,7 @@ export function RiskMovementPanel({ distribution }: { distribution: Distribution
         {distribution.map((item) => (
           <div key={item.band}>
             <span><i style={{ background: item.color }} />{item.band}</span>
-            <strong>{item.loans.toLocaleString()}</strong>
+            <strong>{item.loans.toLocaleString("en-IN")}</strong>
           </div>
         ))}
       </div>
@@ -58,7 +58,7 @@ export function RiskMovementPanel({ distribution }: { distribution: Distribution
               <strong>{item.label}</strong>
               <small>{formatMoneyCompact(item.exposure)} exposure</small>
             </div>
-            <span className="movement-count"><strong>{item.count.toLocaleString()}</strong><small>loans</small></span>
+            <span className="movement-count"><strong>{item.count.toLocaleString("en-IN")}</strong><small>loans</small></span>
             <span className={`movement-meter is-${item.direction}`} aria-hidden="true"><i style={{ width: `${Math.max(5, (item.count / largestMovement) * 100)}%` }} /></span>
           </div>
         ))}

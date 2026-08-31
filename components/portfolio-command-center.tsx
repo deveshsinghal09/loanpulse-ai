@@ -114,7 +114,7 @@ export function PortfolioCommandCenter({
                 <span className="live-indicator"><i /> Surveillance active</span>
               </div>
               <h1>See the <em>signal</em>{" "}<br />before the loss.</h1>
-              <p>Northstar portfolio · {summary.loanCount.toLocaleString()} active loans under continuous review.</p>
+              <p>Northstar portfolio · {summary.loanCount.toLocaleString("en-IN")} active loans under continuous review.</p>
             </div>
             <div className="masthead-visual-wrap">
               <RiskFieldVisual label="Northstar living risk field" value="37 review signals" />
