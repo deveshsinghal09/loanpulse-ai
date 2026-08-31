@@ -1,0 +1,93 @@
+{
+  "categorical_features": [
+    "application_type",
+    "employment_length",
+    "grade",
+    "home_ownership",
+    "purpose",
+    "state",
+    "sub_grade",
+    "verification_status"
+  ],
+  "date_columns": [
+    "issue_date"
+  ],
+  "excluded_columns": [
+    "defaulted",
+    "loan_id"
+  ],
+  "identifier_columns": [
+    "loan_id"
+  ],
+  "numerical_features": [
+    "annual_income",
+    "bankcard_limit",
+    "credit_history_years",
+    "currently_delinquent_accounts",
+    "delinquencies_2y",
+    "dti",
+    "fico_score",
+    "inquiries_6m",
+    "installment",
+    "installment_credit_limit",
+    "interest_rate",
+    "joint_annual_income",
+    "joint_dti",
+    "loan_amount",
+    "months_since_last_delinquency",
+    "months_since_major_derogatory",
+    "mortgage_accounts",
+    "open_accounts",
+    "payment_burden",
+    "public_record_bankruptcies",
+    "public_records",
+    "revolving_balance",
+    "revolving_utilization",
+    "tax_liens",
+    "term_months",
+    "total_accounts",
+    "total_current_balance"
+  ],
+  "requires_confirmation": false,
+  "suspicious_columns": [],
+  "target_candidates": [
+    {
+      "column": "defaulted",
+      "confidence": 0.98,
+      "reasons": [
+        "recognized target name",
+        "binary cardinality"
+      ]
+    },
+    {
+      "column": "application_type",
+      "confidence": 0.58,
+      "reasons": [
+        "binary cardinality"
+      ]
+    },
+    {
+      "column": "term_months",
+      "confidence": 0.58,
+      "reasons": [
+        "binary cardinality"
+      ]
+    }
+  ],
+  "target_column": "defaulted",
+  "target_confidence": 1.0,
+  "time_candidates": [
+    {
+      "column": "issue_date",
+      "confidence": 0.6,
+      "reasons": [
+        "100% parseable as datetime",
+        "name contains 'issue'",
+        "name contains 'date'"
+      ]
+    }
+  ],
+  "time_column": "issue_date",
+  "time_confidence": 1.0,
+  "warnings": []
+}

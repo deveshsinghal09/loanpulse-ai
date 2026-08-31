@@ -1,0 +1,1611 @@
+{
+  "column_count": 40,
+  "columns": [
+    {
+      "column": "loan_id",
+      "constant": false,
+      "dtype": "int64",
+      "high_cardinality": true,
+      "inferred_role": "identifier",
+      "invalid_count": 0,
+      "maximum": 145636374.0,
+      "mean": 56215451.7108867,
+      "median": 57684544.0,
+      "minimum": 55716.0,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "68407277",
+          1
+        ],
+        [
+          "68341763",
+          1
+        ],
+        [
+          "68426831",
+          1
+        ],
+        [
+          "68616873",
+          1
+        ],
+        [
+          "68577849",
+          1
+        ]
+      ],
+      "unique_count": 449080,
+      "unique_rate": 1.0
+    },
+    {
+      "column": "issue_date",
+      "constant": false,
+      "dtype": "str",
+      "high_cardinality": false,
+      "inferred_role": "prediction_time",
+      "invalid_count": 0,
+      "maximum": "2018-12-01T00:00:00+00:00",
+      "mean": null,
+      "median": null,
+      "minimum": "2007-06-01T00:00:00+00:00",
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "2016-03-01",
+          16372
+        ],
+        [
+          "2015-10-01",
+          14308
+        ],
+        [
+          "2015-07-01",
+          13630
+        ],
+        [
+          "2015-12-01",
+          13137
+        ],
+        [
+          "2014-10-01",
+          11969
+        ]
+      ],
+      "unique_count": 139,
+      "unique_rate": 0.00031
+    },
+    {
+      "column": "defaulted",
+      "constant": false,
+      "dtype": "int64",
+      "high_cardinality": false,
+      "inferred_role": "target",
+      "invalid_count": 0,
+      "maximum": 1.0,
+      "mean": 0.19956132537632493,
+      "median": 0.0,
+      "minimum": 0.0,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "0",
+          359461
+        ],
+        [
+          "1",
+          89619
+        ]
+      ],
+      "unique_count": 2,
+      "unique_rate": 4e-06
+    },
+    {
+      "column": "loan_amount",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 40000.0,
+      "mean": 14398.185456934176,
+      "median": 12000.0,
+      "minimum": 500.0,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "10000.0",
+          32970
+        ],
+        [
+          "12000.0",
+          24371
+        ],
+        [
+          "20000.0",
+          23313
+        ],
+        [
+          "15000.0",
+          23286
+        ],
+        [
+          "35000.0",
+          17066
+        ]
+      ],
+      "unique_count": 1490,
+      "unique_rate": 0.003318
+    },
+    {
+      "column": "term_months",
+      "constant": false,
+      "dtype": "int64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 60.0,
+      "mean": 41.773029304355575,
+      "median": 36.0,
+      "minimum": 36.0,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "36",
+          341057
+        ],
+        [
+          "60",
+          108023
+        ]
+      ],
+      "unique_count": 2,
+      "unique_rate": 4e-06
+    },
+    {
+      "column": "interest_rate",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 0.3099,
+      "mean": 0.1324409588492028,
+      "median": 0.1274,
+      "minimum": 0.0530999999999999,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "0.1099",
+          12452
+        ],
+        [
+          "0.1199",
+          11209
+        ],
+        [
+          "0.1399",
+          9752
+        ],
+        [
+          "0.0532",
+          9675
+        ],
+        [
+          "0.0917",
+          8662
+        ]
+      ],
+      "unique_count": 656,
+      "unique_rate": 0.001461
+    },
+    {
+      "column": "installment",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 1717.63,
+      "mean": 437.4837653202102,
+      "median": 374.735,
+      "minimum": 4.93,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 8,
+      "top_values": [
+        [
+          "327.34",
+          1006
+        ],
+        [
+          "301.15",
+          885
+        ],
+        [
+          "332.1",
+          868
+        ],
+        [
+          "318.79",
+          750
+        ],
+        [
+          "491.01",
+          702
+        ]
+      ],
+      "unique_count": 59528,
+      "unique_rate": 0.132555
+    },
+    {
+      "column": "grade",
+      "constant": false,
+      "dtype": "str",
+      "high_cardinality": false,
+      "inferred_role": "categorical_feature",
+      "invalid_count": 0,
+      "maximum": null,
+      "mean": null,
+      "median": null,
+      "minimum": null,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "B",
+          130746
+        ],
+        [
+          "C",
+          127754
+        ],
+        [
+          "A",
+          78111
+        ],
+        [
+          "D",
+          67485
+        ],
+        [
+          "E",
+          31157
+        ]
+      ],
+      "unique_count": 7,
+      "unique_rate": 1.6e-05
+    },
+    {
+      "column": "sub_grade",
+      "constant": false,
+      "dtype": "str",
+      "high_cardinality": false,
+      "inferred_role": "categorical_feature",
+      "invalid_count": 0,
+      "maximum": null,
+      "mean": null,
+      "median": null,
+      "minimum": null,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "C1",
+          28683
+        ],
+        [
+          "B4",
+          27842
+        ],
+        [
+          "B5",
+          27487
+        ],
+        [
+          "B3",
+          27333
+        ],
+        [
+          "C2",
+          26598
+        ]
+      ],
+      "unique_count": 35,
+      "unique_rate": 7.8e-05
+    },
+    {
+      "column": "employment_length",
+      "constant": false,
+      "dtype": "str",
+      "high_cardinality": false,
+      "inferred_role": "categorical_feature",
+      "invalid_count": 0,
+      "maximum": null,
+      "mean": null,
+      "median": null,
+      "minimum": null,
+      "missing_count": 26345,
+      "missing_rate": 0.058664,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "10+ years",
+          147171
+        ],
+        [
+          "2 years",
+          40533
+        ],
+        [
+          "< 1 year",
+          36345
+        ],
+        [
+          "3 years",
+          36050
+        ],
+        [
+          "1 year",
+          29789
+        ]
+      ],
+      "unique_count": 11,
+      "unique_rate": 2.6e-05
+    },
+    {
+      "column": "home_ownership",
+      "constant": false,
+      "dtype": "str",
+      "high_cardinality": false,
+      "inferred_role": "categorical_feature",
+      "invalid_count": 0,
+      "maximum": null,
+      "mean": null,
+      "median": null,
+      "minimum": null,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "MORTGAGE",
+          221800
+        ],
+        [
+          "RENT",
+          178766
+        ],
+        [
+          "OWN",
+          48331
+        ],
+        [
+          "ANY",
+          94
+        ],
+        [
+          "OTHER",
+          73
+        ]
+      ],
+      "unique_count": 6,
+      "unique_rate": 1.3e-05
+    },
+    {
+      "column": "annual_income",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 9500000.0,
+      "mean": 76206.29330106582,
+      "median": 65000.0,
+      "minimum": 1.0,
+      "missing_count": 125,
+      "missing_rate": 0.000278,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 7308,
+      "top_values": [
+        [
+          "60000.0",
+          17489
+        ],
+        [
+          "50000.0",
+          15353
+        ],
+        [
+          "65000.0",
+          12850
+        ],
+        [
+          "70000.0",
+          12265
+        ],
+        [
+          "40000.0",
+          11890
+        ]
+      ],
+      "unique_count": 29373,
+      "unique_rate": 0.065425
+    },
+    {
+      "column": "verification_status",
+      "constant": false,
+      "dtype": "str",
+      "high_cardinality": false,
+      "inferred_role": "categorical_feature",
+      "invalid_count": 0,
+      "maximum": null,
+      "mean": null,
+      "median": null,
+      "minimum": null,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "Source Verified",
+          173311
+        ],
+        [
+          "Verified",
+          139858
+        ],
+        [
+          "Not Verified",
+          135911
+        ]
+      ],
+      "unique_count": 3,
+      "unique_rate": 7e-06
+    },
+    {
+      "column": "purpose",
+      "constant": false,
+      "dtype": "str",
+      "high_cardinality": false,
+      "inferred_role": "categorical_feature",
+      "invalid_count": 0,
+      "maximum": null,
+      "mean": null,
+      "median": null,
+      "minimum": null,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "debt_consolidation",
+          260244
+        ],
+        [
+          "credit_card",
+          98467
+        ],
+        [
+          "home_improvement",
+          29416
+        ],
+        [
+          "other",
+          26093
+        ],
+        [
+          "major_purchase",
+          9773
+        ]
+      ],
+      "unique_count": 14,
+      "unique_rate": 3.1e-05
+    },
+    {
+      "column": "state",
+      "constant": false,
+      "dtype": "str",
+      "high_cardinality": false,
+      "inferred_role": "categorical_feature",
+      "invalid_count": 0,
+      "maximum": null,
+      "mean": null,
+      "median": null,
+      "minimum": null,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "CA",
+          65431
+        ],
+        [
+          "TX",
+          36937
+        ],
+        [
+          "NY",
+          36629
+        ],
+        [
+          "FL",
+          31999
+        ],
+        [
+          "IL",
+          17043
+        ]
+      ],
+      "unique_count": 51,
+      "unique_rate": 0.000114
+    },
+    {
+      "column": "dti",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 9.99,
+      "mean": 0.18276074640828596,
+      "median": 0.1762999999999999,
+      "minimum": 0.0,
+      "missing_count": 130,
+      "missing_rate": 0.000289,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 528,
+      "top_values": [
+        [
+          "0.144",
+          346
+        ],
+        [
+          "0.192",
+          328
+        ],
+        [
+          "0.18",
+          326
+        ],
+        [
+          "0.0",
+          307
+        ],
+        [
+          "0.132",
+          307
+        ]
+      ],
+      "unique_count": 5476,
+      "unique_rate": 0.012197
+    },
+    {
+      "column": "delinquencies_2y",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 30.0,
+      "mean": 0.316632262460669,
+      "median": 0.0,
+      "minimum": 0.0,
+      "missing_count": 7,
+      "missing_rate": 1.6e-05,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "0.0",
+          362717
+        ],
+        [
+          "1.0",
+          57471
+        ],
+        [
+          "2.0",
+          16740
+        ],
+        [
+          "3.0",
+          6130
+        ],
+        [
+          "4.0",
+          2667
+        ]
+      ],
+      "unique_count": 25,
+      "unique_rate": 5.6e-05
+    },
+    {
+      "column": "credit_history_years",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 83.24982888432581,
+      "mean": 16.24843318387296,
+      "median": 14.74880219028063,
+      "minimum": 0.5037645448323066,
+      "missing_count": 7,
+      "missing_rate": 1.6e-05,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 1164,
+      "top_values": [
+        [
+          "12.0",
+          2671
+        ],
+        [
+          "12.999315537303216",
+          2117
+        ],
+        [
+          "16.0",
+          2102
+        ],
+        [
+          "12.16700889801506",
+          1889
+        ],
+        [
+          "11.83299110198494",
+          1844
+        ]
+      ],
+      "unique_count": 2635,
+      "unique_rate": 0.005868
+    },
+    {
+      "column": "fico_score",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 847.5,
+      "mean": 698.152192259731,
+      "median": 692.0,
+      "minimum": 612.0,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 279,
+      "top_values": [
+        [
+          "662.0",
+          40399
+        ],
+        [
+          "672.0",
+          39072
+        ],
+        [
+          "667.0",
+          38916
+        ],
+        [
+          "677.0",
+          34791
+        ],
+        [
+          "682.0",
+          34677
+        ]
+      ],
+      "unique_count": 46,
+      "unique_rate": 0.000102
+    },
+    {
+      "column": "inquiries_6m",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 32.0,
+      "mean": 0.6617320569261568,
+      "median": 0.0,
+      "minimum": 0.0,
+      "missing_count": 7,
+      "missing_rate": 1.6e-05,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 2388,
+      "top_values": [
+        [
+          "0.0",
+          257356
+        ],
+        [
+          "1.0",
+          121735
+        ],
+        [
+          "2.0",
+          45259
+        ],
+        [
+          "3.0",
+          17445
+        ],
+        [
+          "4.0",
+          4890
+        ]
+      ],
+      "unique_count": 22,
+      "unique_rate": 4.9e-05
+    },
+    {
+      "column": "months_since_last_delinquency",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 202.0,
+      "mean": 34.33232659628496,
+      "median": 31.0,
+      "minimum": 0.0,
+      "missing_count": 226579,
+      "missing_rate": 0.50454,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 7,
+      "top_values": [
+        [
+          "13.0",
+          4302
+        ],
+        [
+          "9.0",
+          4204
+        ],
+        [
+          "12.0",
+          4199
+        ],
+        [
+          "7.0",
+          4180
+        ],
+        [
+          "6.0",
+          4089
+        ]
+      ],
+      "unique_count": 139,
+      "unique_rate": 0.000625
+    },
+    {
+      "column": "open_accounts",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 84.0,
+      "mean": 11.578360311129817,
+      "median": 11.0,
+      "minimum": 0.0,
+      "missing_count": 7,
+      "missing_rate": 1.6e-05,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 2126,
+      "top_values": [
+        [
+          "9.0",
+          39782
+        ],
+        [
+          "10.0",
+          38615
+        ],
+        [
+          "8.0",
+          38046
+        ],
+        [
+          "11.0",
+          35910
+        ],
+        [
+          "7.0",
+          34445
+        ]
+      ],
+      "unique_count": 72,
+      "unique_rate": 0.00016
+    },
+    {
+      "column": "public_records",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 63.0,
+      "mean": 0.21525676226359633,
+      "median": 0.0,
+      "minimum": 0.0,
+      "missing_count": 7,
+      "missing_rate": 1.6e-05,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "0.0",
+          373108
+        ],
+        [
+          "1.0",
+          63676
+        ],
+        [
+          "2.0",
+          8065
+        ],
+        [
+          "3.0",
+          2453
+        ],
+        [
+          "4.0",
+          875
+        ]
+      ],
+      "unique_count": 30,
+      "unique_rate": 6.7e-05
+    },
+    {
+      "column": "revolving_balance",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 2568995.0,
+      "mean": 16308.01171283513,
+      "median": 11129.0,
+      "minimum": 0.0,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 10465,
+      "top_values": [
+        [
+          "0.0",
+          2229
+        ],
+        [
+          "6075.0",
+          45
+        ],
+        [
+          "4397.0",
+          42
+        ],
+        [
+          "10334.0",
+          42
+        ],
+        [
+          "5314.0",
+          42
+        ]
+      ],
+      "unique_count": 59933,
+      "unique_rate": 0.133457
+    },
+    {
+      "column": "revolving_utilization",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 3.666,
+      "mean": 0.5188984073012803,
+      "median": 0.523,
+      "minimum": 0.0,
+      "missing_count": 282,
+      "missing_rate": 0.000628,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 1,
+      "top_values": [
+        [
+          "0.0",
+          2382
+        ],
+        [
+          "0.54",
+          878
+        ],
+        [
+          "0.57",
+          876
+        ],
+        [
+          "0.59",
+          874
+        ],
+        [
+          "0.55",
+          874
+        ]
+      ],
+      "unique_count": 1225,
+      "unique_rate": 0.00273
+    },
+    {
+      "column": "total_accounts",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 173.0,
+      "mean": 24.96374308854017,
+      "median": 23.0,
+      "minimum": 1.0,
+      "missing_count": 7,
+      "missing_rate": 1.6e-05,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 427,
+      "top_values": [
+        [
+          "21.0",
+          16179
+        ],
+        [
+          "22.0",
+          16099
+        ],
+        [
+          "20.0",
+          16077
+        ],
+        [
+          "19.0",
+          16035
+        ],
+        [
+          "18.0",
+          15838
+        ]
+      ],
+      "unique_count": 126,
+      "unique_rate": 0.000281
+    },
+    {
+      "column": "months_since_major_derogatory",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 202.0,
+      "mean": 43.71684529931238,
+      "median": 44.0,
+      "minimum": 0.0,
+      "missing_count": 331427,
+      "missing_rate": 0.738013,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 6,
+      "top_values": [
+        [
+          "45.0",
+          1892
+        ],
+        [
+          "40.0",
+          1865
+        ],
+        [
+          "43.0",
+          1841
+        ],
+        [
+          "38.0",
+          1830
+        ],
+        [
+          "46.0",
+          1827
+        ]
+      ],
+      "unique_count": 156,
+      "unique_rate": 0.001326
+    },
+    {
+      "column": "application_type",
+      "constant": false,
+      "dtype": "str",
+      "high_cardinality": false,
+      "inferred_role": "categorical_feature",
+      "invalid_count": 0,
+      "maximum": null,
+      "mean": null,
+      "median": null,
+      "minimum": null,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "Individual",
+          440389
+        ],
+        [
+          "Joint App",
+          8691
+        ]
+      ],
+      "unique_count": 2,
+      "unique_rate": 4e-06
+    },
+    {
+      "column": "joint_annual_income",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 800000.0,
+      "mean": 117533.6043942009,
+      "median": 106000.0,
+      "minimum": 11000.0,
+      "missing_count": 440389,
+      "missing_rate": 0.980647,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 89,
+      "top_values": [
+        [
+          "100000.0",
+          170
+        ],
+        [
+          "90000.0",
+          154
+        ],
+        [
+          "110000.0",
+          152
+        ],
+        [
+          "120000.0",
+          146
+        ],
+        [
+          "130000.0",
+          123
+        ]
+      ],
+      "unique_count": 2131,
+      "unique_rate": 0.245196
+    },
+    {
+      "column": "joint_dti",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 0.6365999999999999,
+      "mean": 0.18821022897250028,
+      "median": 0.1834,
+      "minimum": 0.0,
+      "missing_count": 440389,
+      "missing_rate": 0.980647,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 1,
+      "top_values": [
+        [
+          "0.2153999999999999",
+          12
+        ],
+        [
+          "0.1827",
+          11
+        ],
+        [
+          "0.1923",
+          11
+        ],
+        [
+          "0.1735",
+          10
+        ],
+        [
+          "0.1583999999999999",
+          10
+        ]
+      ],
+      "unique_count": 2945,
+      "unique_rate": 0.338856
+    },
+    {
+      "column": "currently_delinquent_accounts",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 4.0,
+      "mean": 0.0050370429751955695,
+      "median": 0.0,
+      "minimum": 0.0,
+      "missing_count": 7,
+      "missing_rate": 1.6e-05,
+      "near_constant": true,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "0.0",
+          446943
+        ],
+        [
+          "1.0",
+          2021
+        ],
+        [
+          "2.0",
+          90
+        ],
+        [
+          "3.0",
+          15
+        ],
+        [
+          "4.0",
+          4
+        ]
+      ],
+      "unique_count": 5,
+      "unique_rate": 1.1e-05
+    },
+    {
+      "column": "total_current_balance",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": true,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 3881449.0,
+      "mean": 141174.0168891688,
+      "median": 79912.0,
+      "minimum": 0.0,
+      "missing_count": 23541,
+      "missing_rate": 0.052421,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 2766,
+      "top_values": [
+        [
+          "0.0",
+          136
+        ],
+        [
+          "20912.0",
+          15
+        ],
+        [
+          "13452.0",
+          14
+        ],
+        [
+          "20271.0",
+          14
+        ],
+        [
+          "36115.0",
+          13
+        ]
+      ],
+      "unique_count": 232402,
+      "unique_rate": 0.546136
+    },
+    {
+      "column": "mortgage_accounts",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 36.0,
+      "mean": 1.6715001434083065,
+      "median": 1.0,
+      "minimum": 0.0,
+      "missing_count": 16748,
+      "missing_rate": 0.037294,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 364,
+      "top_values": [
+        [
+          "0.0",
+          174512
+        ],
+        [
+          "1.0",
+          75449
+        ],
+        [
+          "2.0",
+          62704
+        ],
+        [
+          "3.0",
+          46328
+        ],
+        [
+          "4.0",
+          31569
+        ]
+      ],
+      "unique_count": 32,
+      "unique_rate": 7.4e-05
+    },
+    {
+      "column": "public_record_bankruptcies",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 11.0,
+      "mean": 0.13441748189556602,
+      "median": 0.0,
+      "minimum": 0.0,
+      "missing_count": 433,
+      "missing_rate": 0.000964,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "0.0",
+          392736
+        ],
+        [
+          "1.0",
+          52559
+        ],
+        [
+          "2.0",
+          2626
+        ],
+        [
+          "3.0",
+          522
+        ],
+        [
+          "4.0",
+          134
+        ]
+      ],
+      "unique_count": 11,
+      "unique_rate": 2.5e-05
+    },
+    {
+      "column": "tax_liens",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 63.0,
+      "mean": 0.05189165595889999,
+      "median": 0.0,
+      "minimum": 0.0,
+      "missing_count": 29,
+      "missing_rate": 6.5e-05,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "0.0",
+          434701
+        ],
+        [
+          "1.0",
+          9862
+        ],
+        [
+          "2.0",
+          2621
+        ],
+        [
+          "3.0",
+          900
+        ],
+        [
+          "4.0",
+          463
+        ]
+      ],
+      "unique_count": 29,
+      "unique_rate": 6.5e-05
+    },
+    {
+      "column": "bankcard_limit",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 1105500.0,
+      "mean": 21658.91695733834,
+      "median": 15100.0,
+      "minimum": 0.0,
+      "missing_count": 16748,
+      "missing_rate": 0.037294,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 7385,
+      "top_values": [
+        [
+          "0.0",
+          4768
+        ],
+        [
+          "5000.0",
+          3545
+        ],
+        [
+          "6000.0",
+          3193
+        ],
+        [
+          "7000.0",
+          2991
+        ],
+        [
+          "10000.0",
+          2887
+        ]
+      ],
+      "unique_count": 7792,
+      "unique_rate": 0.018023
+    },
+    {
+      "column": "installment_credit_limit",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 2101913.0,
+      "mean": 42120.87157933821,
+      "median": 31644.0,
+      "minimum": 0.0,
+      "missing_count": 23541,
+      "missing_rate": 0.052421,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 6222,
+      "top_values": [
+        [
+          "0.0",
+          51903
+        ],
+        [
+          "10000.0",
+          2352
+        ],
+        [
+          "15000.0",
+          1892
+        ],
+        [
+          "20000.0",
+          1498
+        ],
+        [
+          "5000.0",
+          1404
+        ]
+      ],
+      "unique_count": 114768,
+      "unique_rate": 0.2697
+    },
+    {
+      "column": "payment_burden",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": true,
+      "inferred_role": "numerical_feature",
+      "invalid_count": 0,
+      "maximum": 2.0,
+      "mean": 0.07954980503114503,
+      "median": 0.072125,
+      "minimum": 0.000214575,
+      "missing_count": 125,
+      "missing_rate": 0.000278,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 991,
+      "top_values": [
+        [
+          "0.079704",
+          183
+        ],
+        [
+          "0.0722759999999999",
+          171
+        ],
+        [
+          "0.098202",
+          133
+        ],
+        [
+          "0.048184",
+          131
+        ],
+        [
+          "0.0785616",
+          131
+        ]
+      ],
+      "unique_count": 299136,
+      "unique_rate": 0.666294
+    },
+    {
+      "column": "exposure",
+      "constant": false,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "unclassified",
+      "invalid_count": 0,
+      "maximum": 40000.0,
+      "mean": 14398.185456934176,
+      "median": 12000.0,
+      "minimum": 500.0,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": false,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "10000.0",
+          32970
+        ],
+        [
+          "12000.0",
+          24371
+        ],
+        [
+          "20000.0",
+          23313
+        ],
+        [
+          "15000.0",
+          23286
+        ],
+        [
+          "35000.0",
+          17066
+        ]
+      ],
+      "unique_count": 1490,
+      "unique_rate": 0.003318
+    },
+    {
+      "column": "lgd",
+      "constant": true,
+      "dtype": "float64",
+      "high_cardinality": false,
+      "inferred_role": "unclassified",
+      "invalid_count": 0,
+      "maximum": 0.45,
+      "mean": 0.45000000000000007,
+      "median": 0.45,
+      "minimum": 0.45,
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "near_constant": true,
+      "notes": [],
+      "outlier_count": 0,
+      "top_values": [
+        [
+          "0.45",
+          449080
+        ]
+      ],
+      "unique_count": 1,
+      "unique_rate": 2e-06
+    }
+  ],
+  "duplicate_rate": 0.0,
+  "duplicate_rows": 0,
+  "health_scores": {
+    "completeness": 0.9139,
+    "consistency": 1.0,
+    "data_health": 0.9742,
+    "temporal_coverage": 1.0,
+    "uniqueness": 1.0,
+    "validity": 1.0
+  },
+  "minority_class_rate": 0.19956132537632493,
+  "row_count": 449080,
+  "suspicious_columns": [],
+  "target_distribution": {
+    "0": 359461,
+    "1": 89619
+  },
+  "temporal_end": "2018-12-01T00:00:00+00:00",
+  "temporal_invalid_count": 0,
+  "temporal_start": "2007-06-01T00:00:00+00:00",
+  "transformations_applied": [
+    "None. Profiling is read-only; proposed exclusions and issues are reported without silently cleaning data."
+  ],
+  "warnings": [
+    "One or more constant columns were identified and should be excluded before modeling."
+  ]
+}

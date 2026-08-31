@@ -1,0 +1,231 @@
+{
+  "global_importance": [
+    {
+      "feature": "cat__sub_grade",
+      "mean_absolute_shap": 0.27762317657470703
+    },
+    {
+      "feature": "num__term_months",
+      "mean_absolute_shap": 0.16080209612846375
+    },
+    {
+      "feature": "num__annual_income",
+      "mean_absolute_shap": 0.12218813598155975
+    },
+    {
+      "feature": "cat__grade",
+      "mean_absolute_shap": 0.11901991814374924
+    },
+    {
+      "feature": "num__payment_burden",
+      "mean_absolute_shap": 0.09474708884954453
+    },
+    {
+      "feature": "num__dti",
+      "mean_absolute_shap": 0.08272064477205276
+    },
+    {
+      "feature": "num__inquiries_6m",
+      "mean_absolute_shap": 0.07350160926580429
+    },
+    {
+      "feature": "num__interest_rate",
+      "mean_absolute_shap": 0.06419673562049866
+    },
+    {
+      "feature": "num__open_accounts",
+      "mean_absolute_shap": 0.04655027389526367
+    },
+    {
+      "feature": "cat__purpose",
+      "mean_absolute_shap": 0.040432509034872055
+    },
+    {
+      "feature": "num__bankcard_limit",
+      "mean_absolute_shap": 0.03966246172785759
+    },
+    {
+      "feature": "num__missingness_score",
+      "mean_absolute_shap": 0.03377031162381172
+    },
+    {
+      "feature": "cat__state",
+      "mean_absolute_shap": 0.032681092619895935
+    },
+    {
+      "feature": "num__fico_score",
+      "mean_absolute_shap": 0.03198566660284996
+    },
+    {
+      "feature": "cat__home_ownership",
+      "mean_absolute_shap": 0.029673509299755096
+    },
+    {
+      "feature": "num__total_current_balance",
+      "mean_absolute_shap": 0.02167305164039135
+    },
+    {
+      "feature": "num__credit_history_years",
+      "mean_absolute_shap": 0.02046634443104267
+    },
+    {
+      "feature": "num__installment_credit_limit",
+      "mean_absolute_shap": 0.01869914121925831
+    },
+    {
+      "feature": "num__mortgage_accounts",
+      "mean_absolute_shap": 0.013509265147149563
+    },
+    {
+      "feature": "num__loan_amount",
+      "mean_absolute_shap": 0.012628271244466305
+    },
+    {
+      "feature": "num__revolving_balance",
+      "mean_absolute_shap": 0.010872149839997292
+    },
+    {
+      "feature": "num__revolving_utilization",
+      "mean_absolute_shap": 0.010333698242902756
+    },
+    {
+      "feature": "num__missingindicator_months_since_last_delinquency",
+      "mean_absolute_shap": 0.007664389442652464
+    },
+    {
+      "feature": "num__months_since_last_delinquency",
+      "mean_absolute_shap": 0.007561304606497288
+    },
+    {
+      "feature": "num__installment",
+      "mean_absolute_shap": 0.006830823607742786
+    },
+    {
+      "feature": "num__total_accounts",
+      "mean_absolute_shap": 0.005965037737041712
+    },
+    {
+      "feature": "num__months_since_major_derogatory",
+      "mean_absolute_shap": 0.004522090777754784
+    },
+    {
+      "feature": "cat__employment_length",
+      "mean_absolute_shap": 0.00434099929407239
+    },
+    {
+      "feature": "cat__verification_status",
+      "mean_absolute_shap": 0.0039598047733306885
+    },
+    {
+      "feature": "num__missingindicator_total_current_balance",
+      "mean_absolute_shap": 0.002063249470666051
+    },
+    {
+      "feature": "num__public_records",
+      "mean_absolute_shap": 0.001245112856850028
+    },
+    {
+      "feature": "num__tax_liens",
+      "mean_absolute_shap": 0.0006941831670701504
+    },
+    {
+      "feature": "num__delinquencies_2y",
+      "mean_absolute_shap": 0.0006033004028722644
+    },
+    {
+      "feature": "num__missingindicator_public_record_bankruptcies",
+      "mean_absolute_shap": 0.0005893286434002221
+    },
+    {
+      "feature": "num__missingindicator_mortgage_accounts",
+      "mean_absolute_shap": 0.0005579121643677354
+    },
+    {
+      "feature": "num__missingindicator_months_since_major_derogatory",
+      "mean_absolute_shap": 0.00017022663087118417
+    },
+    {
+      "feature": "num__public_record_bankruptcies",
+      "mean_absolute_shap": 9.191647404804826e-05
+    },
+    {
+      "feature": "num__currently_delinquent_accounts",
+      "mean_absolute_shap": 4.5124241296434775e-05
+    },
+    {
+      "feature": "num__missingindicator_tax_liens",
+      "mean_absolute_shap": 1.3086641956761014e-05
+    },
+    {
+      "feature": "cat__application_type",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__missingindicator_open_accounts",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__missingindicator_public_records",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__missingindicator_revolving_utilization",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__missingindicator_total_accounts",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__missingindicator_joint_dti",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__missingindicator_joint_annual_income",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__missingindicator_payment_burden",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__missingindicator_currently_delinquent_accounts",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__missingindicator_installment_credit_limit",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__missingindicator_bankcard_limit",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__joint_annual_income",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__joint_dti",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__missingindicator_annual_income",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__missingindicator_delinquencies_2y",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__missingindicator_credit_history_years",
+      "mean_absolute_shap": 0.0
+    },
+    {
+      "feature": "num__missingindicator_inquiries_6m",
+      "mean_absolute_shap": 0.0
+    }
+  ],
+  "method": "TreeSHAP",
+  "model_output": "raw_margin",
+  "sample_rows": 300
+}

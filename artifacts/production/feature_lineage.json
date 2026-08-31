@@ -1,0 +1,11 @@
+[
+  {
+    "operation": "row_null_fraction",
+    "output": "missingness_score",
+    "prediction_time_safe": true
+  },
+  {
+    "operation": "replace_non_finite_numeric_values_with_missing",
+    "reason": "downstream imputer handles explicit missing values"
+  }
+]
