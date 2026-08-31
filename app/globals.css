@@ -633,19 +633,6 @@ textarea:focus-visible,
   font-weight: 750;
 }
 
-.context-overline {
-  color: var(--text-3);
-  font-size: 11px;
-  font-weight: 500;
-  margin-right: 2px;
-}
-
-.context-divider {
-  background-color: var(--border);
-  height: 16px;
-  width: 1px;
-}
-
 .topbar-actions {
   align-items: center;
   display: flex;
@@ -2121,21 +2108,17 @@ body:has(.sidebar.is-collapsed) .app-stage { margin-left: calc(var(--sidebar-col
   padding: 0 10px 0 12px;
   top: 12px;
 }
-.portfolio-context { gap: 7px; min-width: 0; overflow: hidden; }
-.topbar-route { align-items: center; display: flex; flex: 0 0 auto; gap: 9px; min-width: 154px; padding-right: 4px; }
+.portfolio-context { gap: 8px; min-width: 0; overflow: hidden; }
+.topbar-route { align-items: center; display: flex; flex: 0 0 auto; gap: 9px; min-width: 150px; padding-right: 2px; }
 .topbar-route>span { align-items: center; background: var(--ink); border-radius: 9px; color: var(--signal); display: flex; flex: 0 0 auto; height: 32px; justify-content: center; width: 32px; }
-.topbar-route>div { display: grid; gap: 1px; }
-.topbar-route small { color: var(--text-3); font-size: 8px; font-weight: 760; letter-spacing: .055em; text-transform: uppercase; }
-.topbar-route strong { color: var(--text-1); font-size: 11.5px; font-weight: 780; white-space: nowrap; }
-.context-divider { height: 24px; margin: 0 2px; }
+.topbar-route strong { color: var(--text-1); font-size: 12px; font-weight: 780; white-space: nowrap; }
 .topbar-menu-control { flex: 0 1 auto; min-width: 0; }
-.context-button { border-radius: 9px; min-height: 38px; padding: 6px 8px; }
+.context-button { border-radius: 9px; min-height: 38px; padding: 6px 9px; }
 .context-button:hover,.context-button[aria-expanded="true"] { background: #f3f4f0; border-color: transparent; }
-.context-overline { background: #eceee8; border-radius: 5px; color: #747b73; font-size: 8px; font-weight: 800; margin-right: 2px; padding: 3px 5px; text-transform: uppercase; }
-.context-portfolio strong { max-width: 205px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.context-date-copy { display: grid; gap: 0; line-height: 1.1; text-align: left; }
-.context-date-copy small { color: var(--text-3); font-size: 8px; font-weight: 650; }
-.context-date-copy strong { color: var(--text-1); font-size: 10.5px; font-weight: 720; white-space: nowrap; }
+.context-portfolio { background:#f3f4f0; color:var(--text-2); gap:7px; max-width:280px; }
+.context-portfolio>svg:first-child { color:#697066; flex:0 0 auto; }
+.context-portfolio strong { color:var(--text-1); font-size:11px; font-weight:720; max-width:215px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.context-portfolio>svg:last-child { color:#8a9089; flex:0 0 auto; }
 .topbar-actions { gap: 7px; min-width: 0; }
 .global-search { background: #f1f2ee; border-color: transparent; box-shadow: none; height: 40px; width: clamp(210px,18vw,292px); }
 .global-search:focus-within { background: #fff; border-color: #bcc4ee; box-shadow: 0 0 0 3px rgba(36,56,216,.1); width: min(320px,24vw); }
@@ -2214,17 +2197,17 @@ body:has(.sidebar.is-collapsed) .app-stage { margin-left: calc(var(--sidebar-col
 @media (max-width: 1260px) {
   .workspace-heading.workspace-hero { grid-template-columns:minmax(340px,.9fr) minmax(390px,1.1fr); }
 }
-@media (max-width: 1500px) {
-  .topbar-route { min-width:32px; }.topbar-route>div,.topbar-system-state { display:none; }
-  .portfolio-context>.topbar-menu-control:last-child { display:none; }
+@media (max-width: 1380px) {
+  .topbar-route { min-width:32px; }
+  .topbar-route>strong,.topbar-system-state { display:none; }
 }
 @media (max-width: 1240px) {
   .topbar .copilot-button { font-size: 0; padding: 0; width: 38px; }
   .topbar .copilot-button svg { margin: 0; }
-  .context-portfolio strong { max-width: 155px; }
+  .context-portfolio strong { max-width:170px; }
 }
 @media (max-width: 1050px) {
-  .portfolio-context>.topbar-menu-control,.context-divider { display:none; }
+  .portfolio-context>.topbar-menu-control { display:none; }
   .topbar-route { min-width:32px; }
   .topbar-actions .icon-button { display:none; }
   .workspace-heading.workspace-hero { grid-template-columns:1fr; }.workspace-concept { min-height:330px; }
