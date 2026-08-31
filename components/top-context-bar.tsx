@@ -45,7 +45,7 @@ export function TopContextBar({
           <span><Command aria-hidden="true" size={14} /></span>
           <div><small>LoanPulse</small><strong>{activeLabel}</strong></div>
         </div>
-        <span className="context-divider" />
+        <span aria-hidden="true" className="context-divider" />
         <div className="topbar-menu-control">
         <button aria-expanded={openMenu === "portfolio"} className="context-button context-portfolio" onClick={() => setOpenMenu((current) => current === "portfolio" ? null : "portfolio")} type="button">
           <span className="context-overline">Book</span>
@@ -55,9 +55,9 @@ export function TopContextBar({
         {openMenu === "portfolio" ? <div className="topbar-popover portfolio-popover"><span>Active workspace</span><strong>{summary.name}</strong><small>{summary.loanCount.toLocaleString()} loans · synthetic demonstration</small><Link href="/controls" onClick={() => setOpenMenu(null)}>View portfolio controls</Link></div> : null}
         </div>
         <div className="topbar-menu-control">
-        <button aria-expanded={openMenu === "date"} className="context-button" onClick={() => setOpenMenu((current) => current === "date" ? null : "date")} type="button">
+        <button aria-expanded={openMenu === "date"} className="context-button context-date" onClick={() => setOpenMenu((current) => current === "date" ? null : "date")} type="button">
           <CalendarDays aria-hidden="true" size={15} />
-          <span>As of Aug 25, 2026</span>
+          <span className="context-date-copy"><small>As of</small><strong>25 Aug 2026</strong></span>
           <ChevronDown aria-hidden="true" size={14} />
         </button>
         {openMenu === "date" ? <div className="topbar-popover date-popover"><span>Demonstration snapshot</span><strong>Aug 25, 2026 · 09:42 UTC</strong><small>Source feeds reconciled. Historical time travel is available inside each Loan Digital Twin.</small></div> : null}
@@ -75,7 +75,7 @@ export function TopContextBar({
             type="search"
             value={query}
           />
-          <kbd aria-hidden="true"><span>⌘</span><span>K</span></kbd>
+          <kbd aria-hidden="true">⌘ K</kbd>
         </label>
         <Link className="icon-button" aria-label="Open alerts" href="/early-warnings">
           <Bell size={17} />
