@@ -17,9 +17,6 @@ export function AuthControls() {
   const configured = Boolean(process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY);
   return (
     <div className="auth-controls">
-      <span className={`environment-badge is-${process.env.NEXT_PUBLIC_APP_MODE === "production" ? "live" : "demo"}`}>
-        <i />{process.env.NEXT_PUBLIC_APP_MODE === "production" ? "Live" : "Demo"}
-      </span>
       {configured ? (
         <ClerkControls />
       ) : (

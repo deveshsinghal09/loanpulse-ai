@@ -61,7 +61,7 @@ export function TopContextBar({
           <span className="sr-only">Search loans or borrowers</span>
           <input
             onChange={(event) => onQueryChange(event.target.value)}
-            placeholder="Search loans or borrowers"
+            placeholder="Search portfolio"
             ref={searchRef}
             type="search"
             value={query}
