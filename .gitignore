@@ -1,0 +1,19 @@
+node_modules/
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+*.tsbuildinfo
+*.py[cod]
+.next/
+out/
+coverage/
+*.log
+*.tsbuildinfo
+.env*
+!.env.example
+
+# Raw financial datasets and locally trained artifacts are never committed.
+data/
+artifacts/*
+!artifacts/.gitkeep
