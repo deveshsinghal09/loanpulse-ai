@@ -1,0 +1,30 @@
+# Local environments and caches
+.venv/
+.next/
+.pytest_cache/
+node_modules/
+**/__pycache__/
+**/*.egg-info/
+*.tsbuildinfo
+
+# Local data and non-production training runs
+data/
+artifacts/run-*/
+artifacts/latest.json
+
+# Local credentials and deployment handoff secrets
+.env*
+!.env.example
+
+# Repository and desktop metadata
+.git/
+.github/
+.codex/
+.agents/
+
+# Python sources are deployed separately on Render. Keep only the governed
+# artifact card referenced by the web README; binaries are not needed by Vercel.
+ml/
+config/
+scripts/prepare_lending_club.py
+artifacts/production/*.joblib
