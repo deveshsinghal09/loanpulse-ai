@@ -9,9 +9,9 @@ __pycache__/
 out/
 coverage/
 *.log
-*.tsbuildinfo
 .env*
 !.env.example
+.vercel/
 
 # Raw financial datasets and locally trained artifacts are never committed.
 data/
