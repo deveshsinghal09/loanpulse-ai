@@ -1,0 +1,39 @@
+# Set these explicitly whenever automatic discovery is uncertain.
+target_column: null
+positive_label: 1
+time_column: null
+prediction_time_column: null
+id_columns: []
+include_columns: []
+drop_columns: []
+suspicious_column_policy: exclude
+
+train_fraction: 0.60
+validation_fraction: 0.20
+test_fraction: 0.20
+random_seed: 42
+decision_threshold: 0.50
+disagreement_threshold: 0.15
+
+isotonic_min_samples: 1000
+isotonic_min_improvement: 0.002
+enable_challenger: true
+compute_shap: true
+shap_sample_size: 500
+primary_n_estimators: 220
+challenger_n_estimators: 240
+
+# Example prediction-safe derived features. Rename fields to match your dataset.
+ratio_features: []
+# - name: debt_to_income
+#   numerator: total_debt
+#   denominator: annual_income
+#   clip_min: 0
+#   clip_max: 20
+
+temporal_features: []
+# - name: account_age_days
+#   source_column: opened_at
+#   reference_column: prediction_at
+#   unit: days
+#   future_policy: error
