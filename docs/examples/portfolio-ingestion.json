@@ -1,0 +1,44 @@
+{
+  "source": "servicing-platform-export",
+  "portfolio": {
+    "slug": "northstar-2026-mid-market",
+    "name": "Northstar 2026 — Mid-market",
+    "asOf": "2026-08-31T09:00:00+05:30",
+    "modelVersion": "pd-2026.08.1",
+    "dataHealth": 0.97
+  },
+  "loans": [
+    {
+      "externalId": "LP-20001",
+      "borrower": "Example Manufacturing Pvt Ltd",
+      "segment": "Industrial",
+      "region": "West",
+      "exposure": 2460000,
+      "facility": "Senior secured revolver",
+      "officer": "Portfolio Operations",
+      "daysPastDue": 0,
+      "attributes": {
+        "annual_income": 7800000,
+        "dti": 0.41,
+        "interest_rate": 0.1125,
+        "payment_burden": 0.29,
+        "lgd": 0.45
+      },
+      "observedAt": "2026-08-31T09:00:00+05:30",
+      "calibratedPd": 0.182,
+      "rawPd": 0.196,
+      "previousPd": 0.161,
+      "expectedLoss": 201474,
+      "anomalyPercentile": 73,
+      "confidence": "high",
+      "modelAgreement": true,
+      "oodScore": 0.08,
+      "lastSignal": "Debt-service coverage moved below the watch threshold",
+      "topDriver": "Debt-service coverage",
+      "drivers": [
+        { "label": "Debt-service coverage", "value": 3.1 },
+        { "label": "Payment recency", "value": -0.8 }
+      ]
+    }
+  ]
+}
