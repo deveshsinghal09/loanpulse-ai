@@ -6,6 +6,7 @@ node_modules/
 **/__pycache__/
 **/*.egg-info/
 *.tsbuildinfo
+*.zip
 
 # Local data and non-production training runs
 data/
