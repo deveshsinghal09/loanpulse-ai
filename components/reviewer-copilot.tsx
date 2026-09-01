@@ -20,8 +20,8 @@ export function ReviewerCopilot() {
     setPrompt(""); setMessages((current) => [...current, { role: "user", text }]); setSending(true);
     try {
       const response = await fetch("/api/copilot", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message: text }) });
-      const result = await response.json() as { text?: string; error?: string; configured?: boolean };
-      setMessages((current) => [...current, { role: result.configured === false ? "system" : "assistant", text: result.text ?? result.error ?? "The copilot did not return a response." }]);
+      const result = await response.json() as { text?: string; error?: string; configured?: boolean; retryable?: boolean };
+      setMessages((current) => [...current, { role: result.configured === false || !response.ok ? "system" : "assistant", text: result.text ?? result.error ?? "The copilot did not return a response." }]);
     } catch { setMessages((current) => [...current, { role: "system", text: "The copilot request could not reach the server. Check the local server and try again." }]); }
     finally { setSending(false); }
   };

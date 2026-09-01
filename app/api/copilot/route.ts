@@ -1,5 +1,6 @@
 export const runtime = "nodejs";
 import { AuthorizationError, requireActor } from "@/lib/server/auth";
+import { buildEvidenceFallback, generateCopilotText } from "@/lib/server/gemini";
 import { getLoanReviews, recordCopilotRun } from "@/lib/server/repository";
 
 type CopilotRequest = { message?: unknown };
@@ -18,16 +19,30 @@ export async function POST(request: Request) {
   const loan = (await getLoanReviews()).find((item) => item.id === "LP-10482");
   const loanContext = loan ? `${loan.borrower} has ${(loan.calibratedPd * 100).toFixed(1)}% calibrated PD, ₹${(loan.exposure / 100_000).toFixed(1)}L exposure, expected loss ₹${(loan.expectedLoss / 100_000).toFixed(2)}L, P${loan.anomalyPercentile} anomaly percentile, and ${loan.modelAgreement ? "model agreement" : "material model disagreement"}.` : "The selected loan context is unavailable.";
   const systemContext = "You are LoanPulse Reviewer Copilot. Summarize supplied loan-risk context for trained human reviewers. Be concise, cite stated figures, distinguish model-based scenario analysis from observed evidence, do not make lending decisions, and require human validation for material actions.";
-  const model = process.env.GEMINI_MODEL ?? "gemini-3.7-flash";
-  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
-    body: JSON.stringify({ contents: [{ role: "user", parts: [{ text: `${systemContext}\n\nLoan context: ${loanContext}\n\nReviewer question: ${message}` }] }], generationConfig: { maxOutputTokens: 600, temperature: 0.2 } }),
+  const primaryModel = process.env.GEMINI_MODEL ?? "gemini-3.7-flash";
+  const result = await generateCopilotText({
+    apiKey,
+    prompt: `${systemContext}\n\nLoan context: ${loanContext}\n\nReviewer question: ${message}`,
+    primaryModel,
+    fallbackModel: process.env.GEMINI_FALLBACK_MODEL ?? "gemini-3.6-flash",
   });
-  const payload = await response.json().catch(() => null) as { candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>; error?: { message?: string } } | null;
-  if (!response.ok) { await recordCopilotRun(actor, { loanId: "LP-10482", prompt: message, status: "failed", durationMs: Math.round(performance.now() - started), model, errorCode: String(response.status) }); return Response.json({ error: payload?.error?.message ?? "Gemini could not complete this request." }, { status: response.status >= 500 ? 502 : response.status }); }
-  const text = payload?.candidates?.[0]?.content?.parts?.map((part) => part.text ?? "").join("\n").trim();
-  if (!text) return Response.json({ error: "Gemini returned no readable text." }, { status: 502 });
-  await recordCopilotRun(actor, { loanId: "LP-10482", prompt: message, response: text, status: "succeeded", durationMs: Math.round(performance.now() - started), model });
-  return Response.json({ configured: true, text });
+
+  if (!result.ok) {
+    await recordCopilotRun(actor, { loanId: "LP-10482", prompt: message, status: "failed", durationMs: Math.round(performance.now() - started), model: result.model, errorCode: result.code });
+    if (result.retryable && loan) {
+      return Response.json({
+        configured: true,
+        degraded: true,
+        model: "local-evidence-fallback",
+        text: buildEvidenceFallback(loan),
+      }, { headers: { "Cache-Control": "no-store", "X-Copilot-Mode": "degraded" } });
+    }
+    const error = result.status === 403
+        ? "Gemini rejected the configured API key or project permissions. Check the Gemini key in Vercel."
+        : "Reviewer Copilot could not complete this request. Check the Gemini configuration and try again.";
+    return Response.json({ configured: true, error, retryable: result.retryable }, { status: result.status });
+  }
+
+  await recordCopilotRun(actor, { loanId: "LP-10482", prompt: message, response: result.text, status: "succeeded", durationMs: Math.round(performance.now() - started), model: result.model });
+  return Response.json({ configured: true, text: result.text, model: result.model });
 }
