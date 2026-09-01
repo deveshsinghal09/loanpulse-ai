@@ -24,6 +24,7 @@ export type ScenarioResult = {
   band: RiskBand;
   delta: number;
   drivers: Array<{ label: string; value: number }>;
+  scoringSource?: "remote-ml" | "governed-local";
 };
 
 export const riskTimeMachineLoan = {

@@ -89,7 +89,7 @@ export function RiskTimeMachine({ loan }: { loan: RiskTimeMachineLoan }) {
   const [selectedIndex, setSelectedIndex] = useState(loan.timeline.length - 1);
   const [scenario, setScenario] = useState<ScenarioInputs>(initialScenario);
   const [scenarioResult, setScenarioResult] = useState<ScenarioResult>(() => evaluateScenario(initialScenario));
-  const [scenarioState, setScenarioState] = useState<"ready" | "updating" | "error">("ready");
+  const [scenarioState, setScenarioState] = useState<"ready" | "updating" | "fallback">("ready");
   const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [threshold, setThreshold] = useState(0.7);
   const searchRef = useRef<HTMLInputElement>(null);
@@ -127,10 +127,14 @@ export function RiskTimeMachine({ loan }: { loan: RiskTimeMachineLoan }) {
           signal: controller.signal,
         });
         if (!response.ok) throw new Error("Scenario calculation failed");
-        setScenarioResult(await response.json() as ScenarioResult);
-        setScenarioState("ready");
+        const result = await response.json() as ScenarioResult;
+        setScenarioResult(result);
+        setScenarioState(result.scoringSource === "governed-local" ? "fallback" : "ready");
       } catch (error) {
-        if ((error as Error).name !== "AbortError") setScenarioState("error");
+        if ((error as Error).name !== "AbortError") {
+          setScenarioResult({ ...evaluateScenario(scenario), scoringSource: "governed-local" });
+          setScenarioState("fallback");
+        }
       }
     }, 260);
     return () => { controller.abort(); window.clearTimeout(timer); };
@@ -224,7 +228,7 @@ export function RiskTimeMachine({ loan }: { loan: RiskTimeMachineLoan }) {
               <div className="stage-label"><span>Future</span><i /> <small>What happens under stress?</small></div>
               <div className="future-grid">
                 <div className="scenario-workbench">
-                  <div className="stage-heading"><div><h2 id="future-heading">Stress the observed state</h2><p>Adjust eligible borrower inputs; the scenario is scored after a 260 ms debounce.</p></div><span className={`scenario-state is-${scenarioState}`}>{scenarioState === "updating" ? <LoaderCircle size={13} /> : <CheckCircle2 size={13} />}{scenarioState === "error" ? "Calculation unavailable" : scenarioState === "updating" ? "Updating model" : "Model current"}</span></div>
+                  <div className="stage-heading"><div><h2 id="future-heading">Stress the observed state</h2><p>Adjust eligible borrower inputs; the scenario is scored after a 260 ms debounce.</p></div><span className={`scenario-state is-${scenarioState}`} title={scenarioState === "fallback" ? "The governed local estimate is active while remote inference is unavailable." : undefined}>{scenarioState === "updating" ? <LoaderCircle size={13} /> : scenarioState === "fallback" ? <AlertTriangle size={13} /> : <CheckCircle2 size={13} />}{scenarioState === "fallback" ? "Governed estimate" : scenarioState === "updating" ? "Updating model" : "Model current"}</span></div>
                   <div className="scenario-controls">
                     <ScenarioSlider hint="Revenue or earnings pressure" label="Income decline" max={30} onChange={(value) => setScenarioValue("incomeDecline", value)} unit="%" value={scenario.incomeDecline} />
                     <ScenarioSlider hint="Change from current DTI" label="DTI increase" max={20} onChange={(value) => setScenarioValue("dtiIncrease", value)} unit=" pp" value={scenario.dtiIncrease} />
