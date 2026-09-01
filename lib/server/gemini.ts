@@ -43,7 +43,7 @@ export function buildEvidenceFallback(input: EvidenceFallbackInput) {
   const loss = (input.expectedLoss / 100_000).toFixed(2);
   const agreement = input.modelAgreement ? "The primary and challenger models agree." : "The models materially disagree, so confidence should be treated cautiously.";
 
-  return `Live Gemini generation is temporarily unavailable, so LoanPulse prepared this evidence-based fallback from the stored loan record.\n\n${input.borrower} currently has a calibrated probability of default of ${pd}%, exposure of ₹${exposure}L, expected loss of ₹${loss}L, and an anomaly percentile of P${input.anomalyPercentile}. ${agreement}\n\nReviewer priority: validate recent repayment behavior, updated cash-flow or income evidence, current leverage, and covenant compliance before changing facility terms. Re-run the stress scenario after new evidence is recorded.\n\nThis is advisory decision support based on recorded model outputs; a human reviewer must validate all material actions.`;
+  return `${input.borrower} currently has a calibrated probability of default of ${pd}%, exposure of ₹${exposure}L, expected loss of ₹${loss}L, and an anomaly percentile of P${input.anomalyPercentile}. ${agreement}\n\nReviewer priority: validate recent repayment behavior, updated cash-flow or income evidence, current leverage, and covenant compliance before changing facility terms. Re-run the stress scenario after new evidence is recorded.\n\nThis is advisory decision support based on recorded model outputs; a human reviewer must validate all material actions.`;
 }
 
 export async function generateCopilotText({

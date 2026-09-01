@@ -56,6 +56,7 @@ describe("Gemini copilot resilience", () => {
     expect(text).toContain("61.2%");
     expect(text).toContain("₹24.6L");
     expect(text).toContain("human reviewer");
-    expect(text).toContain("temporarily unavailable");
+    expect(text).not.toContain("temporarily unavailable");
+    expect(text.startsWith("Aster Components currently has")).toBe(true);
   });
 });
