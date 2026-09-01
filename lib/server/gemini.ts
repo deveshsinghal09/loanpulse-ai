@@ -26,6 +26,8 @@ type EvidenceFallbackInput = {
 };
 
 const RETRYABLE_STATUSES = new Set([408, 429, 500, 502, 503, 504]);
+const ATTEMPTS_PER_MODEL = 2;
+const REQUEST_TIMEOUT_MS = 4_000;
 
 function wait(milliseconds: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, milliseconds));
@@ -62,7 +64,7 @@ export async function generateCopilotText({
   };
 
   for (const model of models) {
-    for (let attempt = 0; attempt < 3; attempt += 1) {
+    for (let attempt = 0; attempt < ATTEMPTS_PER_MODEL; attempt += 1) {
       try {
         const response = await fetchImpl(
           `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
@@ -73,7 +75,7 @@ export async function generateCopilotText({
               contents: [{ role: "user", parts: [{ text: prompt }] }],
               generationConfig: { maxOutputTokens: 600, temperature: 0.2 },
             }),
-            signal: AbortSignal.timeout(20_000),
+            signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
           },
         );
         const payload = (await response.json().catch(() => null)) as GeminiPayload | null;
@@ -97,7 +99,7 @@ export async function generateCopilotText({
         lastFailure = { ok: false, code: "provider_network_error", status: 503, retryable: true, model };
       }
 
-      if (attempt < 2) {
+      if (attempt < ATTEMPTS_PER_MODEL - 1) {
         const jitter = Math.floor(Math.random() * 250);
         await sleep(500 * 2 ** attempt + jitter);
       }

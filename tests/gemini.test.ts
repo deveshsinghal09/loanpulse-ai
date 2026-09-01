@@ -23,13 +23,12 @@ describe("Gemini copilot resilience", () => {
     const fetchImpl = vi.fn()
       .mockResolvedValueOnce(jsonResponse({}, 503))
       .mockResolvedValueOnce(jsonResponse({}, 503))
-      .mockResolvedValueOnce(jsonResponse({}, 503))
       .mockResolvedValueOnce(jsonResponse({ candidates: [{ content: { parts: [{ text: "Fallback answer" }] } }] }));
 
     const result = await generateCopilotText({ apiKey: "test", prompt: "Review", primaryModel: "primary", fallbackModel: "fallback", fetchImpl, sleep: vi.fn().mockResolvedValue(undefined) });
 
     expect(result).toEqual({ ok: true, text: "Fallback answer", model: "fallback" });
-    expect(fetchImpl).toHaveBeenCalledTimes(4);
+    expect(fetchImpl).toHaveBeenCalledTimes(3);
   });
 
   it("does not retry invalid credentials", async () => {
